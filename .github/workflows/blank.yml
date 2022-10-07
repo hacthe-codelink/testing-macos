@@ -1,4 +1,4 @@
-name: Deploy master branch
+name: Deploy testing 1 branch
 'on':
   pull_request:
     types: ["opened", "reopened"]
