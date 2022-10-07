@@ -1,0 +1,19 @@
+name: Deploy master branch
+'on':
+  pull_request:
+    types: ["opened", "reopened"]
+    branches:
+      - main
+
+jobs:
+  deploy-testing-url:
+    name: deploy-testing-url
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Print to console
+        run: echo heello world
