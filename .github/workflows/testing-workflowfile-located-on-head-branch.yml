@@ -1,0 +1,19 @@
+name: Located on head branch bro =)))
+'on':
+  pull_request:
+    types: ["opened", "reopened"]
+    branches:
+      - testing-2
+
+jobs:
+  deploy-testing-url:
+    name: deploy-testing-url
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Print to console
+        run: echo This action is located in head branch bro =((((
